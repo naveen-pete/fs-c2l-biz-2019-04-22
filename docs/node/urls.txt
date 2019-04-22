@@ -1,0 +1,10 @@
+
+Enhanced Object Literals in ES6
+- https://dev.to/sarah_chima/enhanced-object-literals-in-es6-a9d
+
+Getting Started with Node, Express and Mysql Using Sequelize
+- https://medium.com/@prajramesh93/getting-started-with-node-express-and-mysql-using-sequelize-ed1225afc3e0
+
+Soap - A SOAP client and server for node.js
+- https://www.npmjs.com/package/soap
+- https://github.com/vpulim/node-soap
