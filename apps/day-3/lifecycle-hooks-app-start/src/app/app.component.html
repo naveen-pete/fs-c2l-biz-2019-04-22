@@ -1,0 +1,19 @@
+<div class="container">
+  <app-server-form (serverCreated)="onServerCreated($event)">
+    <h1>demo for ng-content directive</h1>
+  </app-server-form>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button *ngIf="servers.length > 0" class="btn btn-primary" (click)="onChangeFirst()">Change first Element</button>
+      <button *ngIf="servers.length > 0" class="btn btn-danger" (click)="onDestroyFirst()">Destroy first Component</button>
+      <br>
+      <br>
+      <app-server-detail *ngFor="let server of servers" [name]="server.name">
+        <p>
+          <strong style="color: blue">{{ server.content }}</strong>
+        </p>
+      </app-server-detail>
+    </div>
+  </div>
+</div>
