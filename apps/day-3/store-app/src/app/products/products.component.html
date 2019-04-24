@@ -4,6 +4,7 @@
   </div>
 
   <div class="col-md-8">
-    <app-product-detail [product]="p" *ngFor="let p of products"></app-product-detail>
+    <input type="text" class="form-control mb-2" placeholder="Search..." [(ngModel)]="searchText">
+    <app-product-detail [product]="p" *ngFor="let p of products | searchProducts : searchText"></app-product-detail>
   </div>
 </div>

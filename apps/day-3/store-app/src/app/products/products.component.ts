@@ -7,6 +7,8 @@ import { Product } from '../models/product';
   templateUrl: './products.component.html'
 })
 export class ProductsComponent {
+  searchText: string = '';
+
   products: Product[] = [
     {
       name: 'iPhone X',

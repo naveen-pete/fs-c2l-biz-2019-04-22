@@ -9,6 +9,7 @@ import { Product } from '../models/product';
 })
 export class ProductDetailComponent implements OnInit {
   @Input() product: Product;
+  color = 'lavender';
   constructor() { }
 
   ngOnInit() {
