@@ -38,3 +38,6 @@ Introduction to Webpack (JavaScript Meetup Youtube Channel)
 
 Angular Modularity
 - https://youtu.be/sDC3QwuwQH0
+
+How to configure Webpack 4 with Angular 7: a complete guide
+- https://medium.freecodecamp.org/how-to-configure-webpack-4-with-angular-7-a-complete-guide-9a23c879f471
