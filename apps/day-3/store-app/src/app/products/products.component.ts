@@ -1,36 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../models/product';
+import { LoggerService } from '../services/logger.service';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html'
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
   searchText: string = '';
 
-  products: Product[] = [
-    {
-      name: 'iPhone X',
-      description: 'From Apple',
-      price: 50000,
-      isAvailable: false
-    },
-    {
-      name: 'Samsung',
-      description: 'From Samsung',
-      price: 30000,
-      isAvailable: true
-    },
-    {
-      name: 'Mi',
-      description: 'From Xiomi',
-      price: 20000,
-      isAvailable: true
-    }
-  ];
+  products: Product[] = [];
 
-  onProductCreated(newProduct: Product) {
-    this.products.unshift(newProduct);
+  constructor(private logger: LoggerService, private productsService: ProductsService) { }
+
+  ngOnInit() {
+    this.products = this.productsService.getProducts();
   }
+
 }
