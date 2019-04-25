@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RxJS Examples</title>
+  <style>
+    li {
+      margin: 5px;
+    }
+
+    .box {
+      border: solid 1px lightgray;
+      padding: 5px;
+    }
+
+    .mm-output {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>RxJS Examples</h1>
+  <h2>Operators</h2>
+  <ol>
+    <li>Interval</li>
+    <li>Take</li>
+    <li>Timer</li>
+    <li>Range</li>
+    <li>Map</li>
+    <li>Pluck</li>
+    <li>Merge</li>
+    <li>Concat</li>
+    <li>ThrottleTime</li>
+    <li>DebounceTime, DistinctUntilChanged</li>
+    <div>
+      <input type="text" id="customerName" placeholder="customer name">
+    </div>
+    <li>Reduce</li>
+    <li>Scan</li>
+    <li>MergeMap</li>
+    <div class="box">
+      <div>
+        <input type="text" id="firstName" placeholder="first name">
+        <input type="text" id="lastName" placeholder="last name">
+      </div>
+
+      <div>Full Name:
+        <span id="fullName" class="mm-output"></span>
+      </div>
+    </div>
+    <li>SwitchMap</li>
+    <div>
+      <button id="sm">SwitchMap Demo</button>
+    </div>
+  </ol>
+
+  <script src="./dist/app.bundle.js"></script>
+</body>
+
+</html>
