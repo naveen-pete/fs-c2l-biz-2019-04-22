@@ -15,12 +15,15 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductFormComponent } from './product-form/product-form.component';
 
 import { ProductsService } from './services/products.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'products/new', component: ProductFormComponent },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'products/:id/edit', component: ProductFormComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '', component: HomeComponent },
   { path: '**', redirectTo: '/not-found' }
@@ -36,7 +39,9 @@ const appRoutes: Routes = [
 
     ProductsComponent,
     ProductFormComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -47,4 +52,4 @@ const appRoutes: Routes = [
   providers: [ProductsService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
