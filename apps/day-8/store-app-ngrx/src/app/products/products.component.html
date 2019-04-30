@@ -1,0 +1,22 @@
+<!-- Products -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Products</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-5">
+      <!-- Product Form -->
+      <app-product-form></app-product-form>
+    </div>
+
+    <div class="col-sm-7">
+      <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchText">
+      <br>
+      <!-- Product List -->
+      <app-product-detail [product]="p" *ngFor="let p of products | search : searchText : 'description'"></app-product-detail>
+    </div>
+  </div>
+</div>
