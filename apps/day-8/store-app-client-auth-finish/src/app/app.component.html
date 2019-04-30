@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>My Product Store</h2>
+    </div>
+    <div class="col-sm-4">
+      <div class="float-right" *ngIf="userIsAuthenticated">
+        <span class="badge badge-info">Welcome {{ userName }}!</span>
+        <button class="btn btn-sm btn-outline-danger m-2" (click)="onLogout()">Logout</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <app-nav></app-nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

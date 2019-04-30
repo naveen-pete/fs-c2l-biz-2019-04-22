@@ -1,0 +1,37 @@
+<h3>Products</h3>
+<div>
+</div>
+<hr>
+<a routerLink="/products/new" class="btn btn-primary" *ngIf="userId">New</a>
+<br>
+<br>
+<div>
+  <table class="table table-bordered">
+    <tr>
+      <th class="text-center">Name</th>
+      <th class="text-center">Price</th>
+      <th class="text-center">Available</th>
+      <th class="text-center">Created By</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let product of products">
+      <td>{{product.name}}</td>
+      <td class="text-right">{{product.price | currency:'INR'}}</td>
+      <td class="text-center">{{product.isAvailable ? 'Yes' : 'No'}}</td>
+      <td class="text-center">{{product.createdUserName}}</td>
+      <td class="text-center">
+        <div class="btn-group btn-group-sm">
+          <a [routerLink]="['/products', product.id]" class="btn btn-info" *ngIf="isAuthorized(product)">
+            View
+          </a>
+          <a [routerLink]="['/products', product.id, 'edit']" class="btn btn-primary" *ngIf="isAuthorized(product)">
+            Edit
+          </a>
+          <a class="btn btn-warning" (click)="onDelete(product.id)" *ngIf="isAuthorized(product)">
+            Delete
+          </a>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
