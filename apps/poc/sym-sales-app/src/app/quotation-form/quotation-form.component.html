@@ -2,12 +2,12 @@
 <div>
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
 
-    <div *ngFor="let field of fields" class="form-row">
+    <div *ngFor="let field of fields">
       <sym-quotation-form-field [field]="field" [form]="form"></sym-quotation-form-field>
     </div>
 
     <div class="form-row">
-      <button type="submit" [disabled]="!form.valid">Save</button>
+      <button type="submit" [disabled]="!form.valid" class="btn btn-outline-primary">Save</button>
     </div>
   </form>
 

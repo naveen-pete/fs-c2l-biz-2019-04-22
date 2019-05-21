@@ -14,5 +14,17 @@ export class QuotationFormFieldComponent {
 
   get isValid() { return this.form.controls[this.field.key].valid; }
 
-  getControlId(fieldId, radioValue) { return `${fieldId}_${radioValue}`; }
+  getControlId(fieldId, radioValue) {
+    return `${fieldId}_${radioValue}`;
+  }
+
+  getControlClass(controlType) {
+    let cssClass = 'form-group';
+
+    if (controlType === 'radio' || controlType === 'checkbox') {
+      cssClass = 'form-check form-check-inline';
+    }
+
+    return cssClass;
+  }
 }

@@ -9,6 +9,7 @@ import { RadioField } from "../field/field-radio";
   providedIn: 'root'
 })
 export class MetadataService {
+
   getQuotationMetadata(): FieldBase<any>[] {
     const fields: FieldBase<any>[] = [
       new TextboxField({
@@ -51,4 +52,5 @@ export class MetadataService {
 
     return fields.sort((a, b) => a.order - b.order);
   }
+
 }
