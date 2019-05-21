@@ -1,16 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { QuotationComponent } from './quotation/quotation.component';
+import { QuotationFormComponent } from './quotation-form/quotation-form.component';
+import { QuotationFormFieldComponent } from './quotation-form-field/quotation-form-field.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuotationComponent
+    QuotationFormComponent,
+    QuotationFormFieldComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
