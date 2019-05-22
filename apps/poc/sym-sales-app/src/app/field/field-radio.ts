@@ -1,7 +1,7 @@
 import { FieldBase } from './field-base';
 
 export class RadioField extends FieldBase<string> {
-  controlType = 'radio';
+  controlType = 'RADIO';
   options: { label: string, value: string }[] = [];
 
   constructor(options: {} = {}) {

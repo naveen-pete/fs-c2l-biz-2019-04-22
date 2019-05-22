@@ -10,10 +10,20 @@ import { FieldBase } from './field/field-base';
 })
 export class AppComponent implements OnInit {
   fields: FieldBase<any>[] = [];
+  isLoaded = false;
 
   constructor(private ms: MetadataService) { }
 
   ngOnInit() {
-    this.fields = this.ms.getQuotationMetadata();
+     this.ms.getQuotationMetadata().subscribe(
+      (fields) => {
+        console.log('fields:', fields);
+        this.fields = fields;
+        this.isLoaded = true;
+      },
+      (error) => {
+        console.log('error:',error);
+      }
+    );
   }
 }

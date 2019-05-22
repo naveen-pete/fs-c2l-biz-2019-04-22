@@ -1,3 +1,4 @@
 <div class="container">
-  <sym-quotation-form [fields]="fields"></sym-quotation-form>
+  <div class="alert alert-info" *ngIf="!isLoaded">Loading data...</div>
+  <sym-quotation-form [fields]="fields" *ngIf="isLoaded"></sym-quotation-form>
 </div>

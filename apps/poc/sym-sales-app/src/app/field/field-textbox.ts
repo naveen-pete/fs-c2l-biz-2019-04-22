@@ -1,7 +1,7 @@
 import { FieldBase } from './field-base';
 
 export class TextboxField extends FieldBase<string> {
-  controlType = 'textbox';
+  controlType = 'TEXT';
   type: string;
 
   constructor(options: {} = {}) {
