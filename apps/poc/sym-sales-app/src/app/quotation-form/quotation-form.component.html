@@ -1,5 +1,7 @@
+
 <h2>Quotation</h2>
-<div>
+<div class="alert alert-info" *ngIf="!isMetadataLoaded">Loading. Please wait...</div>
+<div *ngIf="isMetadataLoaded">
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
 
     <div *ngFor="let field of fields">

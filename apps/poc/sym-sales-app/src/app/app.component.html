@@ -1,4 +1,3 @@
 <div class="container">
-  <div class="alert alert-info" *ngIf="!isLoaded">Loading data...</div>
-  <sym-quotation-form [fields]="fields" *ngIf="isLoaded"></sym-quotation-form>
+  <router-outlet></router-outlet>
 </div>

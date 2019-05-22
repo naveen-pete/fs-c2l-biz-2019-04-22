@@ -13,8 +13,7 @@ export class QuotationFormFieldComponent {
   @Input() form: FormGroup;
 
   get isValid() {
-    // return this.form.controls[this.field.key].valid; 
-    return false;
+    return this.form.controls[this.field.key].valid; 
   }
 
   getControlId(fieldId, radioValue) {

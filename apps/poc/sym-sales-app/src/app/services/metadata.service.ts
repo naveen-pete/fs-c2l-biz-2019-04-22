@@ -12,7 +12,11 @@ import { RadioField } from "../field/field-radio";
 export class MetadataService {
   private apiUrl = 'http://localhost:8090/systemcommon/rest/Metadata/searchMetadata';
   private fields = [
-    'QuotationPartyDO.firstname', 'QuotationPartyDO.lastname', 'QuotationPartyDO.title', 'QuotationPartyDO.genderCd', 'QuotationDO.quotationDt' 
+    'QuotationPartyDO.firstname', 
+    'QuotationPartyDO.lastname', 
+    'QuotationPartyDO.title', 
+    'QuotationPartyDO.genderCd', 
+    'QuotationDO.quotationDt' 
   ]
 
   constructor(private http: HttpClient){}
@@ -62,19 +66,15 @@ export class MetadataService {
     .pipe(
       map((metadata: any) => {
         let fields: FieldBase<any>[] = [];
-        console.log(metadata);
         this.fields.forEach(field => {
           let uimdFound = metadata.uiMetadata.find(uimd => uimd.metaDataCd === field && uimd.propertyCd === 'LABELKEY');
           let propertyValue = uimdFound ? uimdFound.propertyValue : field;
-          console.log('propertyValue:', propertyValue);
 
           let labelFound = metadata.labels.find(label => label.key === propertyValue);
           let labelValue = labelFound ? labelFound.value : propertyValue;
-          console.log('labelValue:', labelValue);
 
           uimdFound = metadata.uiMetadata.find(uimd => uimd.metaDataCd === field && uimd.propertyCd === 'INPUTTYPECD');
           let controlType = uimdFound ? uimdFound.propertyValue : 'TEXT';
-          console.log('controlType:', controlType);
 
           if(controlType === 'TEXT' || controlType === 'DATE') {
             fields.push(new TextboxField({
@@ -88,12 +88,9 @@ export class MetadataService {
 
           if(controlType === 'COMBO' || controlType === 'RADIO') {
             uimdFound = metadata.uiMetadata.find(uimd => uimd.metaDataCd === field && uimd.propertyCd === 'LOOKUPCD');
-            console.log('uimdFound:', uimdFound);
             let lookupKey = uimdFound ? uimdFound.propertyValue : '';
-            console.log('lookupKey:', lookupKey);
 
             let lookups = metadata.lookupData.filter(lookup => lookup.key === lookupKey);
-            console.log(lookups);
 
             let fieldCtrl: FieldBase<any>;
             if(controlType === 'COMBO') {
@@ -126,5 +123,4 @@ export class MetadataService {
       })
     );
   }
-
 }
